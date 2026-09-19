@@ -15,16 +15,25 @@ pip install -e ".[dev]"
 cp .env.example .env
 ```
 
-Windows PowerShell, using Python 3.12+:
+Windows PowerShell (explicitly installs/selects Python 3.12, even if `python` is 3.11):
 
 ```powershell
-python -m venv .venv
+python -m pip install uv
+python -m uv python install 3.12
+python -m uv venv --python 3.12 --seed .venv
 .venv\Scripts\Activate.ps1
 python -m pip install -e ".[dev]"
-Copy-Item .env.example .env
+if (-not (Test-Path .env)) { Copy-Item .env.example .env }
 ```
 
 Alternatively, `uv python install 3.12` and `uv venv --python 3.12` obtain a suitable runtime. `uv sync --extra dev --locked` reproduces the checked dependency resolution.
+
+Do not recreate an existing `.venv` with a different Python version. Mixing Python 3.11 and
+3.12 packages can cause `pydantic_core._pydantic_core` import failures. If this happens,
+deactivate the environment, rename the old `.venv`, and create a clean one using the explicit
+3.12 commands above. Your `.env` and the default token/database directory are separate from
+the virtualenv and should be preserved. `.python-version` guides uv; it does not change which
+interpreter a bare `python` command selects.
 
 ## Yahoo setup — required manual step
 
