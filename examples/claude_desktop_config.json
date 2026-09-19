@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "fantasy_basketball": {
+      "command": "/absolute/path/Yahoo-basket/.venv/bin/python",
+      "args": ["-m", "fantasy_mcp", "--env-file", "/absolute/path/Yahoo-basket/.env", "serve"]
+    }
+  }
+}

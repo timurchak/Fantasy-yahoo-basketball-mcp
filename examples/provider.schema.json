@@ -1,0 +1,450 @@
+{
+  "$defs": {
+    "NBAPlayer": {
+      "additionalProperties": false,
+      "properties": {
+        "key": {
+          "title": "Key",
+          "type": "string"
+        },
+        "yahoo_id": {
+          "title": "Yahoo Id",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "nba_team": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Nba Team"
+        },
+        "eligibility": {
+          "$ref": "#/$defs/PlayerEligibility"
+        },
+        "status": {
+          "$ref": "#/$defs/PlayerStatus"
+        },
+        "ownership": {
+          "$ref": "#/$defs/PlayerOwnership"
+        },
+        "external_ids": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "title": "External Ids",
+          "type": "object"
+        },
+        "adp": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Adp"
+        },
+        "preseason_rank": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Preseason Rank"
+        },
+        "current_rank": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Current Rank"
+        }
+      },
+      "required": [
+        "key",
+        "yahoo_id",
+        "name"
+      ],
+      "title": "NBAPlayer",
+      "type": "object"
+    },
+    "PlayerEligibility": {
+      "additionalProperties": false,
+      "properties": {
+        "positions": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Positions",
+          "type": "array"
+        }
+      },
+      "title": "PlayerEligibility",
+      "type": "object"
+    },
+    "PlayerOwnership": {
+      "additionalProperties": false,
+      "properties": {
+        "availability": {
+          "default": "unknown",
+          "enum": [
+            "free_agent",
+            "waivers",
+            "rostered",
+            "unknown"
+          ],
+          "title": "Availability",
+          "type": "string"
+        },
+        "team_key": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Team Key"
+        },
+        "percent_owned": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Percent Owned"
+        },
+        "waiver_date": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Waiver Date"
+        }
+      },
+      "title": "PlayerOwnership",
+      "type": "object"
+    },
+    "PlayerStats": {
+      "additionalProperties": false,
+      "properties": {
+        "player_key": {
+          "title": "Player Key",
+          "type": "string"
+        },
+        "season": {
+          "title": "Season",
+          "type": "integer"
+        },
+        "basis": {
+          "default": "totals",
+          "enum": [
+            "totals",
+            "per_game"
+          ],
+          "title": "Basis",
+          "type": "string"
+        },
+        "kind": {
+          "default": "current",
+          "enum": [
+            "historical",
+            "current",
+            "projection"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "values": {
+          "additionalProperties": {
+            "anyOf": [
+              {
+                "minimum": 0,
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "title": "Values",
+          "type": "object"
+        },
+        "provenance": {
+          "$ref": "#/$defs/Provenance"
+        }
+      },
+      "required": [
+        "player_key",
+        "season",
+        "values",
+        "provenance"
+      ],
+      "title": "PlayerStats",
+      "type": "object"
+    },
+    "PlayerStatus": {
+      "additionalProperties": false,
+      "properties": {
+        "code": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Code"
+        },
+        "description": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Description"
+        },
+        "injury_eligible": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Injury Eligible"
+        }
+      },
+      "title": "PlayerStatus",
+      "type": "object"
+    },
+    "Provenance": {
+      "additionalProperties": false,
+      "properties": {
+        "source": {
+          "title": "Source",
+          "type": "string"
+        },
+        "retrieved_at": {
+          "format": "date-time",
+          "title": "Retrieved At",
+          "type": "string"
+        },
+        "season": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Season"
+        },
+        "stale": {
+          "default": false,
+          "title": "Stale",
+          "type": "boolean"
+        },
+        "cached": {
+          "default": false,
+          "title": "Cached",
+          "type": "boolean"
+        },
+        "sample_size": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Sample Size"
+        },
+        "kind": {
+          "default": "observed",
+          "title": "Kind",
+          "type": "string"
+        },
+        "warnings": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Warnings",
+          "type": "array"
+        }
+      },
+      "required": [
+        "source"
+      ],
+      "title": "Provenance",
+      "type": "object"
+    },
+    "ScheduleGame": {
+      "additionalProperties": false,
+      "properties": {
+        "game_id": {
+          "title": "Game Id",
+          "type": "string"
+        },
+        "date": {
+          "format": "date",
+          "title": "Date",
+          "type": "string"
+        },
+        "nba_teams": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Nba Teams",
+          "type": "array"
+        },
+        "status": {
+          "default": "scheduled",
+          "enum": [
+            "scheduled",
+            "final",
+            "postponed"
+          ],
+          "title": "Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "game_id",
+        "date",
+        "nba_teams"
+      ],
+      "title": "ScheduleGame",
+      "type": "object"
+    },
+    "ScheduleInfo": {
+      "additionalProperties": false,
+      "properties": {
+        "season": {
+          "title": "Season",
+          "type": "integer"
+        },
+        "games": {
+          "items": {
+            "$ref": "#/$defs/ScheduleGame"
+          },
+          "title": "Games",
+          "type": "array"
+        },
+        "provenance": {
+          "$ref": "#/$defs/Provenance"
+        },
+        "coverage_start": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Coverage Start"
+        },
+        "coverage_end": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Coverage End"
+        }
+      },
+      "required": [
+        "season",
+        "games",
+        "provenance"
+      ],
+      "title": "ScheduleInfo",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "default": 1,
+      "title": "Schema Version",
+      "type": "integer"
+    },
+    "players": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/NBAPlayer"
+      },
+      "title": "Players",
+      "type": "array"
+    },
+    "stats": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/PlayerStats"
+      },
+      "title": "Stats",
+      "type": "array"
+    },
+    "schedules": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/ScheduleInfo"
+      },
+      "title": "Schedules",
+      "type": "array"
+    }
+  },
+  "title": "ProviderFile",
+  "type": "object"
+}

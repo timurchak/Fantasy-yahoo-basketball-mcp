@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<fantasy_content xmlns="http://fantasysports.yahooapis.com/fantasy/v2/base.rng">
+  <league><league_key>999.l.30166</league_key><league_id>30166</league_id>
+    <name>Synthetic Test League</name><season>2026</season><num_teams>12</num_teams>
+    <settings><scoring_type>head</scoring_type><draft_type>offline</draft_type>
+      <max_weekly_adds>4</max_weekly_adds><weekly_deadline>tomorrow</weekly_deadline>
+      <roster_positions><roster_position><position>PG</position><count>1</count></roster_position>
+        <roster_position><position>BN</position><count>3</count></roster_position>
+        <roster_position><position>IL</position><count>3</count></roster_position></roster_positions>
+      <stat_categories><stats>
+        <stat><stat_id>5</stat_id><display_name>FG%</display_name><sort_order>1</sort_order></stat>
+        <stat><stat_id>12</stat_id><display_name>TO</display_name><sort_order>0</sort_order></stat>
+      </stats></stat_categories>
+    </settings>
+    <players><player><player_key>999.p.1</player_key><player_id>1</player_id>
+      <name><full>Synthetic Player</full></name><editorial_team_abbr>BOS</editorial_team_abbr>
+      <eligible_positions><position>PG</position><position>SG</position></eligible_positions>
+      <ownership><ownership_type>freeagents</ownership_type></ownership>
+      <player_stats><stats><stat><stat_id>3</stat_id><value>50/100</value></stat>
+        <stat><stat_id>5</stat_id><value>.500</value></stat>
+        <stat><stat_id>12</stat_id><value>-</value></stat></stats></player_stats>
+    </player></players>
+  </league>
+</fantasy_content>

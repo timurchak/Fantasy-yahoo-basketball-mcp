@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "players": [
+    {
+      "key": "999.p.1",
+      "yahoo_id": "1",
+      "name": "FICTIONAL EXAMPLE - replace with real Yahoo identity",
+      "nba_team": "BOS",
+      "eligibility": {
+        "positions": [
+          "PG"
+        ]
+      },
+      "status": {
+        "code": null,
+        "description": null,
+        "injury_eligible": null
+      },
+      "ownership": {
+        "availability": "unknown",
+        "team_key": null,
+        "percent_owned": null,
+        "waiver_date": null
+      },
+      "external_ids": {},
+      "adp": null,
+      "preseason_rank": null,
+      "current_rank": null
+    }
+  ],
+  "stats": [
+    {
+      "player_key": "999.p.1",
+      "season": 2026,
+      "basis": "per_game",
+      "kind": "projection",
+      "values": {
+        "FGM": 5.0,
+        "FGA": 10.0,
+        "FTM": 4.0,
+        "FTA": 5.0,
+        "3PTM": 2.0,
+        "PTS": 16.0,
+        "REB": 4.0,
+        "AST": 5.0,
+        "ST": 1.0,
+        "BLK": 0.5,
+        "TO": 2.0,
+        "GP": 70.0,
+        "MIN": 30.0
+      },
+      "provenance": {
+        "source": "illustrative_only_not_real_projection",
+        "retrieved_at": "2026-09-19T18:51:49.815569Z",
+        "season": 2026,
+        "stale": false,
+        "cached": false,
+        "sample_size": null,
+        "kind": "projection",
+        "warnings": [
+          "Replace every example value with authorized provider data"
+        ]
+      }
+    }
+  ],
+  "schedules": []
+}

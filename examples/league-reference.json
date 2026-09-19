@@ -1,0 +1,168 @@
+{
+  "scoring_type": "head",
+  "categories": [
+    {
+      "key": "FG%",
+      "name": "FG%",
+      "yahoo_stat_id": null,
+      "lower_is_better": false,
+      "numerator": "FGM",
+      "denominator": "FGA",
+      "weight": 1.0
+    },
+    {
+      "key": "FT%",
+      "name": "FT%",
+      "yahoo_stat_id": null,
+      "lower_is_better": false,
+      "numerator": "FTM",
+      "denominator": "FTA",
+      "weight": 1.0
+    },
+    {
+      "key": "3PTM",
+      "name": "3PTM",
+      "yahoo_stat_id": null,
+      "lower_is_better": false,
+      "numerator": null,
+      "denominator": null,
+      "weight": 1.0
+    },
+    {
+      "key": "PTS",
+      "name": "PTS",
+      "yahoo_stat_id": null,
+      "lower_is_better": false,
+      "numerator": null,
+      "denominator": null,
+      "weight": 1.0
+    },
+    {
+      "key": "REB",
+      "name": "REB",
+      "yahoo_stat_id": null,
+      "lower_is_better": false,
+      "numerator": null,
+      "denominator": null,
+      "weight": 1.0
+    },
+    {
+      "key": "AST",
+      "name": "AST",
+      "yahoo_stat_id": null,
+      "lower_is_better": false,
+      "numerator": null,
+      "denominator": null,
+      "weight": 1.0
+    },
+    {
+      "key": "ST",
+      "name": "ST",
+      "yahoo_stat_id": null,
+      "lower_is_better": false,
+      "numerator": null,
+      "denominator": null,
+      "weight": 1.0
+    },
+    {
+      "key": "BLK",
+      "name": "BLK",
+      "yahoo_stat_id": null,
+      "lower_is_better": false,
+      "numerator": null,
+      "denominator": null,
+      "weight": 1.0
+    },
+    {
+      "key": "TO",
+      "name": "TO",
+      "yahoo_stat_id": null,
+      "lower_is_better": true,
+      "numerator": null,
+      "denominator": null,
+      "weight": 1.0
+    }
+  ],
+  "roster_slots": [
+    {
+      "position": "PG",
+      "count": 1,
+      "kind": "active"
+    },
+    {
+      "position": "SG",
+      "count": 1,
+      "kind": "active"
+    },
+    {
+      "position": "G",
+      "count": 1,
+      "kind": "active"
+    },
+    {
+      "position": "SF",
+      "count": 1,
+      "kind": "active"
+    },
+    {
+      "position": "PF",
+      "count": 1,
+      "kind": "active"
+    },
+    {
+      "position": "F",
+      "count": 1,
+      "kind": "active"
+    },
+    {
+      "position": "C",
+      "count": 1,
+      "kind": "active"
+    },
+    {
+      "position": "Util",
+      "count": 3,
+      "kind": "active"
+    },
+    {
+      "position": "BN",
+      "count": 3,
+      "kind": "bench"
+    },
+    {
+      "position": "IL",
+      "count": 3,
+      "kind": "injury"
+    }
+  ],
+  "max_teams": 12,
+  "max_weekly_adds": 4,
+  "draft_type": "offline",
+  "rules": {
+    "league_name": "Bierathleten Fantasy Liga",
+    "visible_league_id": "30166",
+    "season": 2026,
+    "max_trades": null,
+    "trade_deadline": "2027-03-04",
+    "draft_pick_trades": false,
+    "waiver_time_days": 1,
+    "waiver_type": "continual rolling list",
+    "waiver_mode": "standard",
+    "injured_add_direct_to_IL": true,
+    "trade_review": "league votes",
+    "veto_votes": 6,
+    "trade_review_days": 2,
+    "post_draft_players": "follow waiver rules",
+    "weekly_deadline": "Daily - Tomorrow",
+    "start_week": 1,
+    "playoff_teams": 8,
+    "playoff_weeks": "19,20,21",
+    "playoff_end_display": "March 28",
+    "playoff_reseeding": false,
+    "lock_eliminated_teams": true,
+    "divisions": false,
+    "lock_benched_players": false,
+    "publicly_viewable": true
+  },
+  "source": "user_reference_not_verified"
+}

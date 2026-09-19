@@ -1,0 +1,5 @@
+[mcp_servers.fantasy_basketball]
+command = "/absolute/path/Yahoo-basket/.venv/bin/python"
+args = ["-m", "fantasy_mcp", "--env-file", "/absolute/path/Yahoo-basket/.env", "serve"]
+startup_timeout_sec = 30
+tool_timeout_sec = 300
